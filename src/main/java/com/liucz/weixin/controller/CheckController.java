@@ -17,13 +17,13 @@ import java.io.PrintWriter;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/")
-public class WeixinController {
+@RequestMapping("/check")
+public class CheckController {
 
     /**
      * 微信接入验证
      */
-    @GetMapping("/check")
+    @GetMapping
     public void checkGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         String signature = req.getParameter("signature");
@@ -42,7 +42,7 @@ public class WeixinController {
     /**
      * 消息的接收与响应
      */
-    @PostMapping("/check")
+    @PostMapping
     public void checkPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, DocumentException {
 
         req.setCharacterEncoding("UTF-8");
